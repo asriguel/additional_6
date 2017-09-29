@@ -29,11 +29,14 @@ module.exports = function zeros(expression) {
         continue;
       }
 
-      fact[0] *= Math.pow(2, twoCount) *  Math.pow(5, fiveCount);
-
+      fact[0] *= Math.pow(2, twoCount);
       result[1] += twoCount;
-      twoCount = 0;  fiveCount = 0;
+      twoCount = 0;
+
+      fact[0] *= Math.pow(5, fiveCount);
       result[0] += fiveCount;
+      fiveCount = 0;
+      
 
       fact[0] -= fact[1];
 
